@@ -1,5 +1,4 @@
-import MainPage from "../src/container/MainPage/Mainpage";
-
+import MainPage from "../src/container/MainPage/MainPage";
 export default function Home() {
   return (
     <div>

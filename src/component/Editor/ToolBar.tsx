@@ -1,5 +1,4 @@
 import {
-  Attachment,
   FormatAlignCenter,
   FormatAlignJustify,
   FormatAlignLeft,
@@ -9,6 +8,7 @@ import {
   FormatStrikethrough,
   FormatUnderlined,
   Image as ImageIcon,
+  YouTube,
 } from '@mui/icons-material';
 import { Editor } from '@tiptap/react';
 import React from 'react';
@@ -138,8 +138,12 @@ export const ToolBar: React.FC<ToolBarProps> = ({ editor }) => {
       >
         <ImageIcon fontSize="small" />
       </ToolBarButton>
-      <ToolBarButton onClick={() => editor?.chain().focus().run()}>
-        <Attachment fontSize="small" />
+      <ToolBarButton onClick={() => {
+        const url = window.prompt('유튜브 URL:');
+
+        editor?.chain().focus().setYoutubeVideo({src: url ?? ''}).run();
+      }}>
+        <YouTube fontSize="small" />
       </ToolBarButton>
     </Container>
   );

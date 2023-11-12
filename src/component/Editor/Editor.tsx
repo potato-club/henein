@@ -8,6 +8,7 @@ import TextAlign from "@tiptap/extension-text-align";
 import Placeholder from "@tiptap/extension-placeholder";
 import Underline from "@tiptap/extension-underline";
 import Image from "@tiptap/extension-image";
+import Youtube from "@tiptap/extension-youtube";
 
 export const extensions = [
   StarterKit.configure({ heading: { levels: [1, 2, 3] } }),
@@ -15,6 +16,7 @@ export const extensions = [
   Placeholder.configure({ placeholder: "내용을 입력해주세요..." }),
   Underline,
   Image,
+  Youtube
 ];
 
 export interface EditorProps {

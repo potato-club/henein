@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { lightMode, darkMode } from '../constants/DefaultTheme';
 import GlobalStyles from '../../styles/GlobalStyles';
 import { ScrollProvider } from './ScrollProvider';
@@ -14,7 +14,7 @@ const Layout = ({ children }: React.PropsWithChildren) => {
       <ScrollProvider>
         <GlobalStyles />
         <Header setTheme={setTheme} />
-        {children}
+        <Wrapper>{children}</Wrapper>
         <Footer />
       </ScrollProvider>
     </ThemeProvider>
@@ -22,3 +22,8 @@ const Layout = ({ children }: React.PropsWithChildren) => {
 };
 
 export default Layout;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-grow: 1;
+`;
